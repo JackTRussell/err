@@ -1,34 +1,41 @@
-@ST_15839
 Feature: DocString variations
-
-@SC_67019
-Scenario Outline: minimalistic
+Scenario: minimalistic
 Given a simple DocString
-#first line (no indent)
-#second line (indented with two spaces)
-#third line was empty"""
+"""
+      first line (no indent)
+        second line (indented with two spaces)
+      third line was empty
+"""
 Given a DocString with content type
-#<foo>
-#<bar />
-#</foo>"""
+"""xml
+      <foo>
+        <bar />
+      </foo>
+"""
 And a DocString with wrong indentation
-#wrongly indented line
+"""
+ wrongly indented line
+"""
 And a DocString with alternative separator
-#first line
-#second line
-And a DocString with normal separator inside
-#first line
-"""
-third line
-#And a DocString with alternative separator inside
-first line
 ```
-third line
-And a DocString with escaped separator inside
-first line
+      first line
+      second line
+```
+And a DocString with normal separator inside
+```
+      first line
 """
-#third line
-
-Examples: 
-|foo|bar /|/foo|
-||||
+      third line
+```
+And a DocString with alternative separator inside
+"""
+      first line
+```
+      third line
+"""
+And a DocString with escaped separator inside
+"""
+      first line
+\"\"\"
+      third line
+"""
