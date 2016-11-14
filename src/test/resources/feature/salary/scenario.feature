@@ -1,5 +1,7 @@
+@ST_15904
 Feature: Salary Management
-@Critical @Test_1
+
+@SC_67564 @Critical @Test_1
 Scenario Outline: Modify an employee's salary
 Given the salary management system is initialized with the following data
 When the boss increases the salary for the <user> with id <id> by 5%
