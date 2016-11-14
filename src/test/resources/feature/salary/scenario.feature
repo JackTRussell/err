@@ -1,7 +1,7 @@
 Feature: Salary Management
 
 @Critical @Test_1
-Scenario: Modify an employee's salary
+Scenario Outline: Modify an employee's salary
 Given the salary management system is initialized with the following data
 When the boss increases the salary for the <user> with id <id> by 5%
 Then the payroll for the employee with <id> should display a salary of <salary>
